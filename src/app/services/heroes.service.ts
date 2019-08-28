@@ -70,4 +70,23 @@ export class HeroesService {
   getHeroe(idx: string) {
     return this.heroes[idx];
   }
+  buscarHeroes(termino: string) {
+    const heroesArr: Heroe[] = [];
+    termino = termino.toLocaleLowerCase();
+    this.heroes.forEach((heroe) => {
+      const nombre = heroe.nombre.toLowerCase();
+      if (nombre.indexOf(termino) >= 0) {
+        // console.log(nombre);
+        heroesArr.push(heroe);
+      }
+    });
+    return heroesArr;
+  }
+}
+export interface Heroe {
+  nombre: string;
+  bio: string;
+  img: string;
+  aparicion: string;
+  casa: string;
 }
