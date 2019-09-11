@@ -81,6 +81,7 @@ export class HeroesService {
       }
     });
     return heroesArr;
+    console.log();
   }
 }
 export interface Heroe {
